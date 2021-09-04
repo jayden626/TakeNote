@@ -18,7 +18,7 @@ const Note = ({ setNotes, title = '', content = '', id }) => {
             return;
         }
         //Save note
-        const note = saveNote(noteTitle, noteContent, id);
+        saveNote(noteTitle, noteContent, id);
         // If this note doesn't have an ID, then it is a new note.
         if (!id) {
             setNotes(getNotes());
