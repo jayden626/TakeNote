@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 
     h1 {
         display: inline-block;
-        padding: 5px 20px;
+        padding: 10px 20px;
         color: var(--medGrey);
         background: var(--lightGrey);
         border-radius: 10px;

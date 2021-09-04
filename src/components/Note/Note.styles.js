@@ -54,6 +54,7 @@ export const Content = styled.div`
         width: 100%;
         height: 80px;
         font-size: var(--fontBig);
+        font-weight: bold;
         text-align: center;
 
         @media (max-width: 768px){
