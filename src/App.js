@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {NotificationContainer} from "react-notifications";
+// Styles
+import { GlobalStyle } from "./GlobalStyle";
+import 'react-notifications/lib/notifications.css';
+// Component 
+import Header from "./components/Header/Header";
+import Home from "./Home";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <>
+    <Header/>
+    <Home/>
+    <GlobalStyle/>
+    <NotificationContainer/>
+  </>
+)
 
 export default App;
