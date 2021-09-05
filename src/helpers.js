@@ -86,15 +86,15 @@ export const getBoards = () => {
     let keys = Object.keys(localStorage);
     let i = keys.length;
 
-    //if no boards, create a new board and return it
-    if (!i) {
-        return [saveBoard("Notes")];
-    }
-
     while (i--) {
         if (keys[i].includes("board")) {
             values.push(JSON.parse(localStorage.getItem(keys[i])));
         }
+    }
+
+    //if no boards, create a new board and return it
+    if (!values.length) {
+        return [saveBoard("Notes")];
     }
 
     return values.sort(function(a,b) {return a.id - b.id});
