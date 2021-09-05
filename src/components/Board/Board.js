@@ -24,7 +24,7 @@ const Board = ({ title, id, setBoards }) => {
     return (
         <Wrapper>
             <Content>
-                <input type="text" placeholder={"Enter board name"} value={name} onChange={handleChange}/>
+                <input type="text" placeholder={"Enter board name"} value={name} onChange={handleChange} autoFocus={!title}/>
                 <Grid>
                     <Note setNotes={setNotes} board={id} />
                     {notes.map(note => (
