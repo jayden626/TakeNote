@@ -6,7 +6,7 @@ import { PropTypes } from 'prop-types';
 
 const Grid = ({header, children}) => (
     <Wrapper>
-        <h1>{header}</h1>
+        <input type="text" placeholder={"Board title"} value={header} />
         <Content>
             {children}
         </Content>

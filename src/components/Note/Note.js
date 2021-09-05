@@ -8,7 +8,7 @@ import { Wrapper, Content } from './Note.styles';
 // Helper
 import { saveNote, getNotes, deleteNote } from '../../helpers';
 
-const Note = ({ setNotes, title = '', content = '', id }) => {
+const Note = ({ setNotes, title = '', content = '', id, board }) => {
     const [noteTitle, setNoteTitle] = useState(title)
     const [noteContent, setNoteContent] = useState(content)
 
@@ -19,10 +19,10 @@ const Note = ({ setNotes, title = '', content = '', id }) => {
             return;
         }
         //Save note
-        saveNote(noteTitle, noteContent, id);
+        saveNote(noteTitle, noteContent, id, board);
         // If this note doesn't have an ID, then it is a new note.
         if (!id) {
-            setNotes(getNotes());
+            setNotes(getNotes(board));
             // Empty text fields
             setNoteTitle('');
             setNoteContent('');
@@ -32,7 +32,7 @@ const Note = ({ setNotes, title = '', content = '', id }) => {
 
     const handleDeleteClick = () => {
         deleteNote(id);
-        setNotes(getNotes());
+        setNotes(getNotes(board));
         NotificationManager.error("Note has been deleted", "Note Deleted!", 2000);
     }
 
@@ -54,7 +54,8 @@ Note.propTypes = {
     setNotes: PropTypes.func,
     title: PropTypes.string,
     content: PropTypes.string,
-    id: PropTypes.number
+    id: PropTypes.number,
+    board: PropTypes.number
 }
 
 export default Note;

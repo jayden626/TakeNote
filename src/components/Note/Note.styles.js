@@ -10,7 +10,7 @@ export const Content = styled.div`
     justify-content: space-evenly;
     padding: 10px;
     margin: 0 auto;
-    background: var(--medYellow);
+    background: var(--lightYellow);
     border-radius: 20px;
     box-shadow: 5px 5px 10px grey;
 
@@ -49,7 +49,7 @@ export const Content = styled.div`
         padding: 15px;
         border: none;
         outline: none;
-        background: var(--lightYellow);
+        background: none;
         border-radius: 10px;
         width: 100%;
         height: 80px;
@@ -68,7 +68,7 @@ export const Content = styled.div`
         padding: 15px;
         border: none;
         outline: none;
-        background: var(--lightYellow);
+        background: none;
         border-radius: 10px;
         width: 100%;
         height: 200px;
