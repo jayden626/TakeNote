@@ -4,6 +4,8 @@ Take Note is my first dive into React.
 It used styled-components for styling.
 Notes are stored in `localStorage` on the browser
 
+[See it in action here!](takenote.jaydenurch.com)
+
 ## External React Components
 * [prop-types](https://www.npmjs.com/package/prop-types)
 * [styled-components](https://www.npmjs.com/package/styled-components)
