@@ -1,6 +1,7 @@
 // storage keys
 export const LAST_ID = "lastId";
 export const LAST_BOARD_ID = "lastBoardId";
+export const LAST_SELECTED_BOARD = "lastSelectedBoardIndex";
 
 
 // note functions
@@ -46,7 +47,7 @@ export const getNotes = (board) => {
             }
         }
     }
-    return values.sort(note => note.id).reverse();
+    return values.sort(function(a,b) {return b.id - a.id});
 }
 
 
@@ -62,7 +63,7 @@ export const getNextBoardId = () => {
 // save a board to local storage
 export const saveBoard = (title, id) => {
     //If an id was passed, we update the board with that id
-    const nextId = id ? id : getNextId();
+    const nextId = id ? id : getNextBoardId();
     // parse board into JSON string
     const board = { id: nextId, title: title };
     // save board
@@ -85,10 +86,26 @@ export const getBoards = () => {
     let keys = Object.keys(localStorage);
     let i = keys.length;
 
+    //if no boards, create a new board and return it
+    if (!i) {
+        return [saveBoard("Notes")];
+    }
+
     while (i--) {
         if (keys[i].includes("board")) {
             values.push(JSON.parse(localStorage.getItem(keys[i])));
         }
     }
-    return values.sort(board => board.id);
+
+    return values.sort(function(a,b) {return a.id - b.id});
+}
+
+// get last selected board
+export const getLastSelectedBoard = () => {
+    return localStorage.getItem(LAST_SELECTED_BOARD) ? JSON.parse(localStorage.getItem(LAST_SELECTED_BOARD)) : 0;
+}
+
+// set last selected board
+export const setLastSelectedBoard = (index) => {
+    localStorage.setItem(LAST_SELECTED_BOARD, index ? index : 0);
 }
