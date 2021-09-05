@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import img from './images/cork.jpg';
+
 export const GlobalStyle = createGlobalStyle`
     :root{
         --maxWidth: 1440px;
@@ -21,6 +23,9 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        background: url(${img});
+        width: 100%;
+        height: auto;
         margin: 0;
         padding: 0;
 

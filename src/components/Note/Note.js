@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { PropTypes } from 'prop-types';
 import { NotificationManager } from 'react-notifications';
 
 // Styles
@@ -47,6 +48,13 @@ const Note = ({ setNotes, title = '', content = '', id }) => {
             </Content>
         </Wrapper>
     );
+}
+
+Note.propTypes = {
+    setNotes: PropTypes.func,
+    title: PropTypes.string,
+    content: PropTypes.string,
+    id: PropTypes.number
 }
 
 export default Note;

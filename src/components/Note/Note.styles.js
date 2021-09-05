@@ -73,6 +73,7 @@ export const Content = styled.div`
         width: 100%;
         height: 200px;
         font-size: var(--fontBig);
+        resize: none;
 
         @media (max-width: 768px){
             height: 150px;

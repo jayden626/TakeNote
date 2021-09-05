@@ -1,12 +1,15 @@
 import React from 'react';
 
 // Styles
-import { Wrapper, Content } from './Header.styles';
+import { Wrapper, Content, LogoImg } from './Header.styles';
+
+// Image
+import logo from '../../images/logo.png';
 
 const Header = () => (
     <Wrapper>
         <Content>
-            <h1>Take note!</h1>
+            <LogoImg src={logo} alt="Take Note!" />
         </Content>
     </Wrapper>
 );
